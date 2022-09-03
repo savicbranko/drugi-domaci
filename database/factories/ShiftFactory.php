@@ -14,7 +14,11 @@ class ShiftFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'start' => $this->faker->dateTime,
+            'end' => $this->faker->dateTime,
+            'route_id' => $this->faker->numberBetween(1, 720),
+            'bus_id' => $this->faker->numberBetween(1, 10),
+            'driver_id' => $this->faker->numberBetween(1, 15)
         ];
     }
 }
