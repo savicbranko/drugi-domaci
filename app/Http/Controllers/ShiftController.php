@@ -30,7 +30,7 @@ class ShiftController extends Controller
             $shift = Shift::create($request->all());
             return response()->json($shift);
         } catch (Exception $ex) {
-            return response()->json(["error" => "App error"], 503);
+            return response()->json(["error" => "App error"], 500);
         }
     }
 
@@ -58,7 +58,7 @@ class ShiftController extends Controller
             $shift->update($request->all());
             return response()->json($shift);
         } catch (Exception $ex) {
-            return response()->json(["error" => "App error"], 503);
+            return response()->json(["error" => "App error"], 500);
         }
     }
 
@@ -74,7 +74,7 @@ class ShiftController extends Controller
             $shift->delete();
             return response()->noContent();
         } catch (Exception $ex) {
-            return response()->json(["error" => "App error"], 503);
+            return response()->json(["error" => "App error"], 500);
         }
     }
 }
